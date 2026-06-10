@@ -7,20 +7,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>중국 지리·음식 탐험</title>
+    <title>중국 자연 탐험</title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>중국 지리 탐험</title>
+    <title>중국 자연 탐험</title>
 
 <style>
 
@@ -130,7 +128,7 @@ body{
 
     transform:translate(-50%, -50%);
 
-    max-width:100vh;
+    max-width: 100vh;
 
     max-height:70vh;
 
@@ -138,7 +136,7 @@ body{
 
     background:white;
 
-    padding:30px;
+    padding:clamp(12px, 2vw, 30px);
 
     border-radius:20px;
 
@@ -148,7 +146,7 @@ body{
 
     z-index:1000;
 
-    font-size:clamp(12px, 1.5vw, 18px);
+     font-size:clamp(12px, 1.5vw, 18px);
 }
 
 .close-btn{
@@ -174,11 +172,13 @@ body{
 
     display:flex;
 
-    gap:25px;
+    gap:20px;
 
     align-items:center;
 
     margin-top:20px;
+
+    flex-wrap:wrap;
 }
 
 
@@ -195,11 +195,7 @@ body{
 
     position:relative;
 
-    width: 80vh;
-
-    height: 40vh;
-
-    overflow:hidden;
+    overflow: auto;
 
     border-radius:15px;
 
@@ -212,7 +208,7 @@ body{
 
     height:100%;
 
-    object-fit:cover;
+    object-fit:auto;
 }
 
 .carousel-btn{
@@ -276,7 +272,7 @@ body{
 
     text-align: left;
     flex:1;
-    font-size: 25px;
+    font-size: clamp(14px, 2vw, 25px);
     font-weight: bold;
     color: #4b241fb9;
     line-height:1.6;
@@ -294,7 +290,7 @@ body{
 
     text-align:center;
 
-    font-size:70px;
+    font-size:clamp(28px, 5vw, 70px);
 
     margin-bottom:20px;
 
@@ -303,7 +299,7 @@ body{
 
 .popup-text{
     flex:1;
-    font-size: 25px;
+    font-size: clamp(14px, 2vw, 25px);
     font-weight: bold;
     color: #4b241fb9;
     line-height:1.8;
@@ -318,7 +314,7 @@ body{
         transform:scale(1) translateX(0) translateY(0);
     }
     to{
-        transform:scale(1.8) translateX(-120px) translateY(-100px);
+        transform:scale(1.1) translateX(0px) translateY(30px);
     }
 }
 
@@ -350,8 +346,10 @@ body{
 }
 
 #popupMap{
+
     width:40%;
-    aspect-ratio: 1/1;
+
+    aspect-ratio:1/1;
 }
 
 @media (max-width:768px){
@@ -365,6 +363,17 @@ body{
         transform-origin:center center;
     }
 
+}
+
+.result-image{
+
+    width:100%;
+
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:15px;
 }
 
 .result-image{
@@ -409,104 +418,70 @@ id="overlay">
     />
 
         <image
-        id="sichuanBtn"
+        id="heilongjiangBtn"
         class="region-icon start-fade"
-        href="images/sichuan.png"
-        x="730"
-        y="530"
-        width="133"
-        height="133"
-        onclick="openRegion('sichuan')"
+        href="images/heilongjiang.png"
+        x="1200"
+        y="100"
+        width="200"
+        height="200"
+        onclick="openRegion('heilongjiang')"
         />
 
     <image
-        id="guangdongBtn"
+        id="neimengguBtn"
         class="region-icon hidden"
-        href="images/guangdong.png"
-        x="960"
-        y="710"
-        width="133"
-        height="133"
-        onclick="openRegion('guangdong')"
+        href="images/neimenggu.png"
+        x="800"
+        y="250"
+        width="200"
+        height="200"
+        onclick="openRegion('neimenggu')"
     />
 
         <image
-        id="shandongBtn"
+        id="xinjiangBtn"
         class="region-icon hidden"
-        href="images/shandong.png"
-        x="1060"
-        y="400"
-        width="133"
-        height="133"
-        onclick="openRegion('shandong')"
+        href="images/xinjiang.png"
+        x="400"
+        y="250"
+        width="200"
+        height="200"
+        onclick="openRegion('xinjiang')"
     />
 
         <image
-        id="jiangsuBtn"
+        id="xizangyunnanBtn"
         class="region-icon hidden"
-        href="images/jiangsu.png"
-        x="1090"
-        y="470"
-        width="133"
-        height="133"
-        onclick="openRegion('jiangsu')"
+        href="images/xizangyunnan.png"
+        x="550"
+        y="560"
+        width="200"
+        height="200"
+        onclick="openRegion('xizangyunnan')"
     />
 
         <image
-        id="anhuiBtn"
+        id="sichuanBtn"
         class="region-icon hidden"
-        href="images/anhui.png"
-        x="1040"
-        y="510"
-        width="133"
-        height="133"
-        onclick="openRegion('anhui')"
-    />
-
-        <image
-        id="zhejiangBtn"
-        class="region-icon hidden"
-        href="images/zhejiang.png"
-        x="1110"
-        y="570"
-        width="133"
-        height="133"
-        onclick="openRegion('zhejiang')"
-    />
-
-        <image
-        id="fujianBtn"
-        class="region-icon hidden"
-        href="images/fujian.png"
-        x="1050"
-        y="640"
-        width="133"
-        height="133"
-        onclick="openRegion('fujian')"
-    />
-
-        <image
-        id="hunanBtn"
-        class="region-icon hidden"
-        href="images/hunan.png"
-        x="910"
-        y="600"
-        width="133"
-        height="133"
-        onclick="openRegion('hunan')"
+        href="images/sichuan.png"
+        x="700"
+        y="500"
+        width="200"
+        height="200"
+        onclick="openRegion('sichuan')"
     />
 
     <image
         id="resultBtn"
         class="region-icon hidden"
         href="images/re.png"
-        x="500"
-        y="300"
-        width="200"
-        height="200"
+        x="110"
+        y="0"
+        width="300"
+        height="300"
         onclick="openResult()"
     />
-
 </svg>
 
 </div>
@@ -627,7 +602,7 @@ class="popup">
     <h2>탐험 결과</h2>
 
     <img
-    src="images/fp.png"
+    src="images/ap.png"
     class="result-image">
 
     <button
@@ -644,14 +619,103 @@ class="popup">
 
 const regions = {
 
+    heilongjiang:{
+
+        title:"헤이룽장 성",
+
+       location:"중국 최북동부, <br>    러시아·북한 접경",
+
+        climate:"냉대 몬순기후로 인해 <br>  겨울이 매우 길고 추움",
+
+        terrain:"광활한 평원과 삼림지대, <br>쑹화강 유역",
+
+        text2:"하얼빈은 중국 최북단에 가까운 헤이룽장성에 위치해 있어 겨울철 기온이 매우 낮고 눈이 많이 내리는 한랭한 기후를 보인다. 이러한 지리적 특징으로 인해 겨울에는 강과 호수가 얼고, 눈과 얼음이 풍부하게 형성된다. 하얼빈에서는 이러한 자연환경을 활용하여 얼음과 눈으로 거대한 조형물을 만드는 국제 빙설제가 개최되며, 겨울철 대표 관광 자원으로 자리 잡았다. 또한 풍부한 적설량과 산악 지형을 활용한 스키 산업도 발전하여, 주변의 야부리 스키장을 비롯한 여러 스키 리조트에서 겨울 스포츠를 즐길 수 있다.",
+
+        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10933451.707264204!2d117.42341607810091!3d48.00791882674155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5e5b1fb6ce2f967f%3A0xfd4303cc8360af00!2z7KSR6rWtIO2XpOydtOujveyepSDshLE!5e0!3m2!1sko!2skr!4v1780877544318!5m2!1sko!2skr",
+        
+        images:[
+            "images/heilongjiang.jpg",
+            "images/heilongjiang2.jpg"
+        ],
+
+        next:"neimengguBtn"
+    },
+
+    neimenggu:{
+
+        title:"네이멍구",
+
+        location:"중국 북부, 몽골과 국경 접함",
+
+        climate:"온대 대륙성 기후로 인해 강수량이 적고 일교차가 큼",
+
+        terrain:"초원, 고원, 사막이 넓게 분포",
+
+        text2:"네이멍구는 중국 북부의 내몽고 고원에 위치한 지역으로, 해발 약 1,000m에 이르는 광활한 초원이 펼쳐져 있는 것이 특징이다. 이 지역은 온대 계절풍의 영향을 받는 내륙성 기후로 인해 겨울에는 춥고 건조하며, 여름에는 강수량이 증가해 목초가 무성하게 자란다. 이러한 지리적 환경은 넓은 목초지와 풍부한 자연자원을 형성하였고, 네이멍구를 중국의 대표적인 목축 지역으로 발전시키는 기반이 되었다. 특히 드넓은 초원에서는 오랫동안 말과 가축을 방목하는 유목 문화가 발달하였으며, 말은 생활과 이동에 중요한 역할을 담당해 왔다. 이처럼 광활한 초원 지형과 목축 문화는 오늘날 승마 체험과 초원 캠핑이라는 대표적인 관광 활동으로 이어지고 있다. 여행객들은 끝없이 펼쳐진 초원을 말을 타고 달리며 유목민의 생활 방식을 체험하고, 게르에서 숙박하며 초원의 자연환경을 직접 경험할 수 있다. 이처럼 네이멍구는 초원 지형과 기후가 유목 문화를 형성하고, 나아가 승마와 초원 캠핑 같은 체험 관광이 발달하는 배경이 된 대표적인 사례이다.",
+
+        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11576686.856992805!2d101.06459536540589!3d44.8960875840843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3605cc4bd26914df%3A0xd59746816dc2e950!2z7KSR6rWtIOuCtOuqveqzqCDsnpDsuZjqtaw!5e0!3m2!1sko!2skr!4v1780879935413!5m2!1sko!2skr",
+
+        
+        images:[
+            "images/neimenggu1.jpg",
+            "images/neimenggu2.jpg",
+            "images/neimenggu3.jpg"
+        ],
+
+        next:"xinjiangBtn"
+    },
+
+    xinjiang:{
+
+        title:"신장 위구르 자치구",
+
+        location:"중국 동부, 양쯔강 하류",
+
+        climate:"온난습윤한 몬순기후",
+
+        terrain:"넓은 평야와 호수, 수로 발달",
+
+        text2:"신장은 중국 서북부에 위치한 지역으로, 광대한 사막과 초원, 산맥이 함께 분포하는 것이 특징이다. 특히 타클라마칸 사막과 같은 거대한 사막 지형이 발달해 있으며, 강수량이 매우 적고 건조한 기후를 보인다. 이러한 지리적 환경은 끝없이 펼쳐진 모래언덕과 웅장한 사막 경관을 만들어냈으며, 이는 신장을 대표하는 관광 자원으로 활용되고 있다. 과거 실크로드의 주요 통로였던 신장에서는 오랫동안 낙타가 중요한 교통수단으로 이용되었는데, 오늘날에는 이러한 사막 환경과 역사적 배경을 바탕으로 낙타 트레킹이 인기 있는 체험 활동으로 자리 잡았다. 또한 높은 사구와 부드러운 모래 지형은 샌드보딩을 즐기기에 적합한 환경을 제공한다.",
+
+        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15020652.297606926!2d77.96381481941168!3d39.93001510217162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3806008cfd7b4dab%3A0xa84116ec366707a1!2z7KSR6rWtIOyLoOyepSDsnITqtazrpbQg7J6Q7LmY6rWs!5e0!3m2!1sko!2skr!4v1780879974975!5m2!1sko!2skr",
+
+        
+        images:[
+            "images/xinjiang1.jpg",
+            "images/xinjiang2.jpg",
+            "images/xinjiang3.jpg"
+        ],
+
+        next:"xizangyunnanBtn"
+    },
+
+    xizangyunnan:{
+
+        title:"티베트와 윈난성",
+
+        location:"중국 서남부, 히말라야산맥과 동남아시아 접경",
+
+        climate:"고산기후와 아열대 고원기후가 공존하여 지역별 기후 차이가 큼",
+
+        terrain:"칭짱고원, 산지, 고원, 깊은 계곡이 발달",
+
+        text2:"티베트는 세계에서 가장 높고 넓은 고원인 티베트 고원에 위치해 평균 해발고도가 4,500m를 넘으며, 윈난성 역시 티베트 고원의 동남쪽 끝에 위치한 평균 해발 약 2,000m의 고원 지대이다. 이러한 높은 해발고도는 두 지역만의 독특한 기후와 자연환경을 만들어냈는데, 티베트는 춥고 건조한 기후와 광활한 고원 풍경이 특징이며, 윈난은 높은 고도의 영향으로 열대기후부터 온대기후, 고산기후까지 다양한 기후가 나타난다. 이처럼 웅장한 산악 지형과 고원 환경은 평지에서는 보기 어려운 자연경관을 형성하였고, 이를 따라 걷는 고산 트레킹이 대표적인 체험 활동으로 발전하였다. 여행객들은 티베트의 광대한 고원과 설산, 윈난의 깊은 계곡과 다양한 생태환경을 직접 경험할 수 있으며, 이는 높은 해발고도와 고원 지형이라는 지리적 특징이 만들어낸 대표적인 관광 활동이라 할 수 있다.",
+
+        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14929792.704514947!2d88.64645441891777!3d29.118040886337955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3761317e9c4a2cc1%3A0x1fc12c628413da99!2z7KSR6rWtIOyLnOyepQ!5e0!3m2!1sko!2skr!4v1780880058516!5m2!1sko!2skr",
+
+        
+        images:[
+            "images/xy1.jpg",
+            "images/xy2.jpg",
+            "images/xy3.jpg"
+        ],
+
+        next:"sichuanBtn"
+    },
+
     sichuan:{
 
         title:"쓰촨",
-
-        x:730,
-        y:530,
-
-        icon:"images/sichuan.png",
 
         location:"중국 서남부",
 
@@ -659,9 +723,7 @@ const regions = {
 
         terrain:"쓰촨 분지",
 
-        text1:"쓰촨은 중국 서남부에 위치하며 분지 지형이 발달하였다.",
-
-        text2:"사천요리는 중국 서부의 산악지대와 양쯔강 상류 지역에서 발달하였다. 사천 분지는 여름철 고온다습한 기후가 나타나 식재료가 쉽게 상할 수 있었고, 이를 보존하기 위해 고추와 후추, 생강 등의 향신료를 적극적으로 사용하게 되었다. 또한 산악지형 덕분에 다양한 야생동물과 채소, 버섯, 죽순 등을 얻을 수 있었고, 풍부한 강 수산물도 활용할 수 있었다. 이러한 환경은 식재료의 다양성과 복합적인 맛을 발전시키는 기반이 되었다. 사천요리는 볶음과 찜을 중심으로 조리하며, 고추와 화자오(사천후추)를 사용해 얼얼하고 매운 ‘마라(麻辣)’ 풍미를 만들어낸다. 산악지대 특성상 절임과 건조 저장식품도 발달하였으며, 마파두부와 훠궈 같은 대표 음식이 이러한 지역적 특징을 잘 보여준다.",
+        text2:"쓰촨성은 중국 남서부 양쯔강 상류에 위치한 지역으로, 서쪽은 해발 4,000m가 넘는 고원과 산악 지대가, 동쪽은 쓰촨 분지가 자리한 독특한 지형을 가지고 있다. 특히 쓰촨 서부의 천서고원은 높은 해발고도와 풍부한 산림 환경을 갖추고 있어 자이언트 판다가 서식하기에 적합한 조건을 제공하며, 현재도 세계적으로 중요한 판다 서식지로 알려져 있다. 덕분에 여행객들은 판다 보호구역에서 판다의 생태를 직접 관찰하는 생태 탐방을 즐길 수 있다. 한편 청두 평원에서 민장 협곡으로 이어지는 지역은 평원에서 산악 지대로 급격히 변화하면서 깊은 협곡과 급류가 발달하였다. 이러한 지리적 특징 덕분에 민장 협곡 일대에서는 급류를 활용한 래프팅 체험도 가능하다.",
 
         map:"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14147399.942594174!2d103.169517!3d30.038146999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36e4e73368bdcdb3%3A0xde8f7ccf8f99feb9!2z7KSR6rWtIOyTsOy0qCDshLE!5e0!3m2!1sko!2skr!4v1780304430462!5m2!1sko!2skr",
 
@@ -669,182 +731,11 @@ const regions = {
 
             "images/sichuan1.jpg",
             "images/sichuan2.jpg",
-            "images/sichuan3.jpg",
-            "images/sichuan4.jpg",
-            "images/sichuan5.jpg"
+            "images/sichuan3.jpg"
         ],
         
-        next:"guangdongBtn"
-    },
-
-    guangdong:{
-
-        title:"광둥",
-
-        location:"중국 남부, 남중국해 연안",
-
-        climate:"아열대 몬순기후로 인해 고온다습",
-
-        terrain:"해안 평야와 구릉, 하천 삼각주",
-
-        text2:"광둥요리는 중국 남부의 아열대 기후 지역에서 발달하였다. 이 지역은 강수량이 풍부하고 연중 기온이 높아 사계절 내내 채소와 과일을 생산할 수 있으며, 바다와 인접해 각종 해산물도 쉽게 구할 수 있다. 이러한 자연환경 덕분에 다양한 식재료를 활용하는 음식 문화가 형성되었고, 재료 본연의 신선함과 단맛을 살리는 조리법이 발전하였다. 또한 16세기 이후 광저우를 중심으로 스페인·포르투갈 등 서양 상인과 선교사들의 왕래가 활발해지면서 서양 요리 기법과 식문화가 유입되었다. 그 결과 광둥요리는 맛뿐 아니라 색채와 장식을 중요하게 여기는 화려한 외관을 갖추게 되었으며, 담백하면서도 풍성한 맛이 특징으로 자리 잡았다. 오늘날 세계 각지의 중국요리 역시 광둥요리의 영향을 크게 받고 있다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767084.8979239212!2d110.85091415147825!3d22.773030695509696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x315285f132af5c3f%3A0x2ed41c6f09259f29!2z7KSR6rWtIOq0keuRpSDshLE!5e0!3m2!1sko!2skr!4v1780301722794!5m2!1sko!2skr",
-        
-        images:[
-            "images/guangdong1.jpg",
-            "images/guangdong2.jpg",
-            "images/guangdong3.jpg"
-        ],
-
-        next:"shandongBtn"
-    },
-
-    shandong:{
-
-        title:"산둥",
-
-        location:"중국 동부, 황해 및 발해 연안",
-
-        climate:"사계절이 뚜렷한 온대 몬순기후",
-
-        terrain:"반도 지형과 평야, 낮은 산지",
-
-        text1:"example",
-
-        text2:"산둥요리는 황허 하류와 교동반도 해안 지역에서 발전하였다. 이 지역은 보하이해와 황해에 접해 있어 해삼, 전복, 새우 등 다양한 해산물이 풍부하며, 넓은 평야에서는 밀, 옥수수, 수수 등의 곡물이 많이 생산된다. 따라서 북부 농경문화와 해안 식문화가 결합된 독특한 음식 체계를 형성하였다. 건조한 기후의 영향으로 양파, 파, 생강, 마늘 등을 적극 활용해 맛을 진하게 내는 것이 특징이며, 재료 본연의 맛을 살리는 조리법을 중요하게 여긴다. 특히 해산물 요리에서는 신선함을 강조하며 맑고 깊은 국물 요리가 발달하였다. 산둥요리는 중국 궁중요리와 북방요리의 기초가 되었고, 한국의 중화요리 형성에도 큰 영향을 미친 대표적인 북방 요리로 평가된다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282680.5343073294!2d116.13229066824283!3d36.536201170239124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x358fcd4735ab4f7f%3A0xd93a2e2370e1b364!2z7KSR6rWtIOyCsOuRpSDshLE!5e0!3m2!1sko!2skr!4v1780301851469!5m2!1sko!2skr",
-
-        
-        images:[
-            "images/shandong1.jpg",
-            "images/shandong2.jpg",
-            "images/shandong3.jpg"
-        ],
-
-        next:"jiangsuBtn"
-    },
-
-    jiangsu:{
-
-        title:"장쑤",
-        
-        location:"중국 동부, 양쯔강 하류",
-
-        climate:"온난습윤한 몬순기후",
-
-        terrain:"넓은 평야와 호수, 수로 발달",
-
-        text2:"장쑤요리, 특히 회양요리는 화이허와 양쯔강 하류 지역의 비옥한 평야와 수향(水鄕) 환경 속에서 발전하였다. 강과 호수, 운하가 촘촘히 연결되어 있어 민물고기와 새우, 게 등 수산물이 풍부하고 농업 생산성도 높았다. 이러한 환경은 신선한 재료를 중심으로 섬세하고 정교한 요리 문화를 형성하는 배경이 되었다. 회양요리는 칼질 기술을 매우 중요하게 여기며, 찜과 탕 요리를 통해 재료 본연의 맛을 살리는 데 집중한다. 또한 죽순, 버섯, 배, 찻잎 등 지역 특산물을 해산물과 조화롭게 사용한다. 자극적인 향신료 대신 소금과 설탕을 활용해 부드럽고 은은한 단맛을 내며, 우아하고 세련된 맛 때문에 중국 궁중요리 발전에도 큰 영향을 미쳤다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429656.825767709!2d116.53825454224747!3d32.91735185443828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b700da314bc245%3A0x8d94eab66c8553b5!2z7KSR6rWtIOyepeyRpCDshLE!5e0!3m2!1sko!2skr!4v1780316647747!5m2!1sko!2skr",
-
-        
-        images:[
-            "images/jiangsu1.jpg",
-            "images/jiangsu2.jpg",
-            "images/jiangsu3.jpg"
-        ],
-
-        next:"anhuiBtn"
-    },
-
-    anhui:{
-
-        title:"안후이",
-
-        location:"중국 동부 내륙",
-
-        climate:"북부 온대, 남부 아열대 기후",
-
-        terrain:"평야와 산지가 분포",
-
-        text2:"안후이요리는 황산과 지우화산을 중심으로 한 산악지역에서 발전하였다. 험준한 지형으로 인해 평야 농업보다는 산림 자원을 활용하는 식문화가 발달하였으며, 버섯과 죽순, 산나물, 약초 등 야생 식재료를 많이 사용한다. 또한 자라와 비둘기 같은 특수 식재료도 자주 활용된다. 안후이요리는 장시간 끓이거나 졸이는 조리법을 선호하며, 재료에서 우러나는 깊고 진한 맛을 중요하게 여긴다. 기름 사용량이 비교적 많고 화력 조절을 중시하여 풍부한 향을 끌어내는 것이 특징이다. 산악 환경에서 얻을 수 있는 자연 식재료를 최대한 활용한 결과, 다른 지역보다 소박하면서도 깊은 풍미를 가진 음식 문화가 형성되었다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464694.6473732903!2d114.62591405545409!3d32.00181463881605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3434a48ca17082d7%3A0x7aa8d6156e75706d!2z7KSR6rWtIOyViO2bhOydtCDshLE!5e0!3m2!1sko!2skr!4v1780316696032!5m2!1sko!2skr",
-
-        
-        images:[
-            "images/anhui1.jpg",
-            "images/anhui2.jpg",
-            "images/anhui3.jpg"
-        ],
-
-        next:"zhejiangBtn"
-    },
-
-    zhejiang:{
-
-        title:"저장",
-
-        location:"동중국해 연안",
-
-        climate:"강수량이 풍부한 아열대 몬순기후",
-
-        terrain:"많은 산지와 구릉, 복잡한 해안선",
-
-        text2:"저장요리는 양쯔강 하류와 대운하가 지나가는 중국 동남부의 대표적인 수로 지역에서 발달하였다. 이 지역은 ‘어미지향(魚米之鄕)’이라 불릴 정도로 쌀과 수산물이 풍부하며, 강과 호수, 운하를 통해 다양한 식재료가 유통되었다. 풍부한 농수산물과 발달한 교통망은 저장요리가 계절에 따라 다양한 재료를 활용하도록 만들었다. 특히 민물고기와 수생식물을 많이 사용하며, 조림과 찜 같은 조리법을 통해 재료의 신선함을 유지한다. 화력 조절을 중요하게 여겨 음식의 식감과 풍미를 세밀하게 살리는 것이 특징이다. 자극적이기보다 담백하고 깔끔한 맛을 추구하며, 다른 지역의 조리법도 적극적으로 수용하여 다양성과 세련미를 갖춘 음식 문화로 발전하였다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1785031.3993632623!2d119.18772321251942!3d29.09418161364685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34491234a50accbf%3A0x81ef71c536187cb7!2z7KSR6rWtIOyggOyepSDshLE!5e0!3m2!1sko!2skr!4v1780316757466!5m2!1sko!2skr",
-
-        
-        images:[
-            "images/zhejiang1.jpg",
-            "images/zhejiang2.jpg",
-            "images/zhejiang3.jpg"
-        ],
-
-        next:"fujianBtn"
-    },
-
-    fujian:{
-
-        title:"푸젠",
-
-        location:"대만해협 연안",
-
-        climate:"고온다습한 아열대 몬순기후",
-
-        terrain:"산지가 대부분이며 좁은 해안 평야",
-
-        text2:"푸젠요리는 중국 동남 연안의 복잡한 해안선과 산악지형 속에서 발전하였다. 산이 많고 평야가 적은 대신 바다와 인접해 있어 해산물이 풍부하며, 산지에서는 버섯과 약용 식물 등 다양한 산물을 얻을 수 있었다. 따라서 푸젠요리는 산의 재료와 바다의 재료를 함께 활용하는 것이 특징이다. 해산물을 주재료로 사용하면서도 국물 요리와 탕 요리가 발달하였고, 재료 본연의 감칠맛을 살리는 데 중점을 둔다. 또한 해상 교역이 활발했던 지역적 특성 때문에 외부 식문화의 영향을 많이 받아 맛의 종류가 다양해졌다. 중국식 고추소스와 케첩, 계피, 와사비 등 여러 조미료를 활용해 복합적인 풍미를 만들어내며, 신선하면서도 깊은 맛을 추구하는 음식 문화가 형성되었다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712228.5475667436!2d116.9264612563519!3d25.51014455161749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x341554d37044f9db%3A0x4eee34b4e4db50e8!2z7KSR6rWtIO2RuOygoCDshLE!5e0!3m2!1sko!2skr!4v1780316877313!5m2!1sko!2skr",
-
-        
-        images:[
-            "images/fujian1.jpg",
-            "images/fujian2.jpg",
-            "images/fujian3.jpg"
-        ],
-
-        next:"hunanBtn"
-    },
-
-    hunan:{
-
-        title:"후난",
-        
-        location:"양쯔강 중류 남쪽",
-
-        climate:"아열대 습윤기후",
-
-        terrain:"분지와 호수, 주변 산지로 둘러싸임",
-
-        text2:"후난요리는 중국 중남부의 후난성에서 발달하였다. 이 지역은 강과 호수가 많고 기후가 덥고 습하여 농업 생산량이 풍부하며, 특히 고추 재배가 활발하다. 이러한 환경은 자연스럽게 매운맛 중심의 음식 문화를 형성하는 배경이 되었다. 후난요리는 고추를 대량으로 사용하여 강렬한 매운맛을 내지만, 사천요리의 얼얼한 마라맛과는 달리 순수하고 직선적인 매운맛이 특징이다. 또한 붉고 짙은 색감의 음식이 많으며, 졸임·절임·찜·볶음 등 다양한 조리법을 활용한다. 습한 기후 속에서 음식의 보존성을 높이고 식욕을 증진시키기 위해 강한 양념을 사용하게 되었으며, 그 결과 향이 진하고 풍미가 강한 음식 문화가 형성되었다.",
-
-        map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628501.187514576!2d108.88564488203176!3d27.361402442455585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3420ba186987384d%3A0xcc21910be4ae2ce5!2z7KSR6rWtIO2bhOuCnCDshLE!5e0!3m2!1sko!2skr!4v1780316911575!5m2!1sko!2skr",
-
-        
-        images:[
-            "images/hunan1.jpg",
-            "images/hunan2.jpg",
-            "images/hunan3.jpg"
-        ],
-
         next:"resultBtn"
-    }
+    },
 }
 
 let currentRegion = "";
@@ -869,13 +760,13 @@ function openRegion(region){
     .innerText = data.title;
 
     document.getElementById("popupLocation")
-    .innerText = "위치: " + data.location;
+    .innerHTML = "위치: " + data.location;
 
     document.getElementById("popupClimate")
-    .innerText = "기후: " + data.climate;
+    .innerHTML = "기후: " + data.climate;
 
     document.getElementById("popupTerrain")
-    .innerText = "지형: " + data.terrain;
+    .innerHTML = "지형: " + data.terrain;
 
     document.getElementById("popupText2")
     .innerText = data.text2;
